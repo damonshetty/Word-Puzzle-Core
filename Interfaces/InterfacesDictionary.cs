@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace InterfacesDictionaryData
 {
@@ -18,6 +17,7 @@ namespace InterfacesDictionaryData
         string ResultFile { get; set; }
         void TransformWord(string StartWord, string EndWord);
         bool IsOneLetterDifferent(string TestStartWord, string TestEndWord);
+        HashSet<string> HasVisited { get; set; }
         List<string> Solution { get; set; }
         void Save(string ResultFile, List<string> Solution);
     }
