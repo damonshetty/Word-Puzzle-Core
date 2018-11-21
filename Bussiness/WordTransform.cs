@@ -72,16 +72,12 @@ namespace Business
         {
             HasVisited.Add(StartWord);
             string tempIterationStartWord = StartWord;
-            int i = 0;
             Solution.Add(StartWord);
             
-            //restart:
+            restart:
             //Iterate through dictionary
             foreach(var HastSetItem in idictionaryData.hashSetDictionaryData)
             {
-                i++;
-                //Console.WriteLine("Working.." + i);
-
                 //Check if one lette difference
                 if (IsOneLetterDifferent(tempIterationStartWord, HastSetItem) && !HasVisited.Contains(HastSetItem))
                 {   
@@ -94,13 +90,14 @@ namespace Business
                         Solution.Add(HastSetItem);
                         HasVisited.Add(HastSetItem);
 
-                        //goto restart;
-
                         if (HastSetItem == EndWord)
                         {
                             Console.WriteLine("Solution Found!");
                             Console.ReadLine();
                             break;
+                        }
+                        else {
+                            goto restart;
                         }
                     }
 
@@ -166,6 +163,7 @@ namespace Business
                 }
             }
         }
-    }
+
+    }  
 
 }
