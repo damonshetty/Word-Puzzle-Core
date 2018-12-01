@@ -18,6 +18,8 @@ namespace InterfacesDictionaryData
         void TransformWord(string StartWord, string EndWord);
         bool IsOneLetterDifferent(string TestStartWord, string TestEndWord);
         HashSet<string> HasVisited { get; set; }
+        int CheckWhichLetterDifferent(string CheckLetterStartWord, string CheckLetterEndWord);
+        bool ShouldAddWord(int LetterPosition, string AddStartWord, string AddEndWord);
         List<string> Solution { get; set; }
         void Save(string ResultFile, List<string> Solution);
     }

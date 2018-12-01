@@ -9,7 +9,6 @@ namespace Business
         public WordTransform(IDictionaryData idictionaryData)
         {
             this.idictionaryData = idictionaryData;
-            Solution = new List<string>();
         }
 
         public IDictionaryData idictionaryData { get; set; }
@@ -64,7 +63,7 @@ namespace Business
                 }
             }
         }
-        public List<string> Solution { get; set; }
+        public List<string> Solution { get; set; } = new List<string>();
 
         public HashSet<string> HasVisited { get; set; } = new HashSet<string>();
 
@@ -107,8 +106,7 @@ namespace Business
             if(Solution.Count > 0)
             {
                 Save(ResultFile, Solution);
-            }
-                    
+            }    
         }
 
         public bool IsOneLetterDifferent(string TestStartWord, string TestEndWord)
